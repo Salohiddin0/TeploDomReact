@@ -7,7 +7,7 @@ export default function Header () {
     {
       title: 'Пеноплекс Основа',
       description:
-        'Пеноплекс» — российская компания, производитель тепло- и гидроизоляционных...',
+        'Пеноплэкс» — российская компания, производитель тепло- и гидроизоляционных, а также декоративно-отделочных материалов на основе полимеров, основной вид продукции — теплоизоляционные плиты из экструзионного пенополистирола',
       image: image57
     }
   ]
@@ -55,7 +55,7 @@ export default function Header () {
                       key={index}
                       onClick={() => setCurrentSlide(index)}
                       className={`w-2 h-2 rounded-full transition-all ${
-                        currentSlide === index ? 'bg-white w-8' : 'bg-white/50'
+                        currentSlide === index ? 'w-8' : 'bg-white/50'
                       }`}
                     >
                       <span className='sr-only'>Slide {index + 1}</span>
