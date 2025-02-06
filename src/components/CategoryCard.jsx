@@ -1,14 +1,22 @@
 import React, { useState } from 'react'
 import img1 from '../assets/ымапывррп 1 (1).png'
-import img2 from '../assets/Rectangle 23828.png'
-import img3 from '../assets/Rectangle 23829.png'
-import img4 from '../assets/Rectangle 23852.png'
-import img5 from '../assets/Rectangle 23839.png'
-import img6 from '../assets/Rectangle 23847.png'
+import img2 from '../assets/мыпапми 2.png'
+import img3 from '../assets/image 90.png'
+import img4 from '../assets/image 91.png'
+import img5 from '../assets/Rectangle 23827.png'
+import img6 from '../assets/sfgfggf 1.png'
 import img7 from '../assets/Rectangle 23865.png'
-import img8 from '../assets/image 90.png'
+import img8 from '../assets/Rectangle 23829.png'
 import img9 from '../assets/Rectangle 23835.png'
 import img10 from '../assets/Rectangle 23823.png'
+import img11 from '../assets/Rectangle 23831.png'
+import img12 from '../assets/Rectangle 23843.png'
+import img13 from '../assets/Rectangle 23839.png'
+import img14 from '../assets/Rectangle 23847.png'
+import img15 from '../assets/Rectangle 23851.png'
+import img16 from '../assets/Rectangle 23855.png'
+import img17 from '../assets/Rectangle 23864.png'
+import img18 from '../assets/Rectangle 23875.png'
 
 const categories = [
   { id: 1, title: 'Сухи смеси', image: img1 },
@@ -17,10 +25,18 @@ const categories = [
   { id: 4, title: 'Изоляционные материалы', image: img4 },
   { id: 5, title: 'Саморезы', image: img5 },
   { id: 6, title: 'Саморезы', image: img6 },
-  { id: 7, title: 'Каркас для ГКЛ', image: img7 },
-  { id: 8, title: 'Товары для сада', image: img8 },
-  { id: 9, title: 'Листовые материалы', image: img9 },
-  { id: 10, title: 'Металлопрокат', image: img10 }
+  { id: 7, title: 'Мебель', image: img7 },
+  { id: 8, title: 'Ручные инструменты', image: img8 },
+  { id: 9, title: 'Пиломатериалы', image: img9 },
+  { id: 10, title: 'Каркас для ГКЛ', image: img10 },
+  { id: 11, title: 'Металлопрокат', image: img11 },
+  { id: 12, title: 'ЖБИ изделия', image: img12 },
+  { id: 13, title: 'Сантехника', image: img13 },
+  { id: 14, title: 'Сайдинг', image: img14 },
+  { id: 15, title: 'Лепной Декор', image: img15 },
+  { id: 16, title: 'Электро техника', image: img16 },
+  { id: 17, title: 'Агрохимия', image: img17 },
+  { id: 18, title: 'Мастер', image: img18 }
 ]
 
 const CategoryCard = () => {
