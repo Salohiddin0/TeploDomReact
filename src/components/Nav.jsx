@@ -293,7 +293,6 @@ export default function Nav () {
           </div>
         </div>
 
-        {/* Desktop Navigation */}
         <nav className='hidden md:flex justify-between gap-4 py-5'>
           <Link
             to='/sale'
