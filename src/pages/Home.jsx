@@ -7,7 +7,6 @@ import ProductCard from '../components/ProductCard'
 const Home = () => {
   return (
     <div className='bg-[#fafafa]'>
-      <Nav />
       <Header />
       <CategoryCard />
       <ProductCard />
