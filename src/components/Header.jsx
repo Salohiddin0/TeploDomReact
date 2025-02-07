@@ -15,7 +15,7 @@ export default function Header () {
   return (
     <div className='container-full '>
       <header
-        className='max-w-7xl mx-auto px-4  '
+        className='max-w-7xl mx-auto px-4 pt-[60px]'
         style={{ borderRadius: '20px' }}
       >
         <div className='relative h-[400px] mt-4'>
