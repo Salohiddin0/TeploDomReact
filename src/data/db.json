@@ -94,19 +94,19 @@
   "ProductCard": [
     {
       "id": 19,
-      "img": "/public/images/dfgsghvgbhdfvynbhrgjhgy 1card1 — копия.png",
+      "img": "/public/images/dfgsghvgbhdfvynbhrgjhgy 1card1.png",
       "title": "СНПТ-8000-Ц ЭРА Стабилизатор напряжения",
       "price": "2 940 000 cум"
     },
     {
       "id": 20,
-      "img": "/public/images/screencapture-teplodomshop-git-teploProj-frontend-web-cart-2022-05-29-11_35_47 3 (1).png",
+      "img": "/public/images/screencapture-teplodomshop-git-teploProj-frontend-web-cart-2022-05-29-11_35_47 3.png",
       "title": "СНК-2000-Ц ЭРА Стабилизатор напряжения",
       "price": "815 000 cум"
     },
     {
       "id": 21,
-      "img": "/public/images/image 85 — копия.png",
+      "img": "/public/images/image 85.png",
       "title": "СНК-500-Ц ЭРА Стабилизатор напряжения",
       "price": "475 000 cум"
     },
@@ -118,13 +118,13 @@
     },
     {
       "id": 23,
-      "img": "/public/images/image 72 — копия.png",
+      "img": "/public/images/image 72.png",
       "title": "RMx-4es-3x1.5-50m Удленитель силовой",
       "price": "1 732 000 сум"
     },
     {
       "id": 24,
-      "img": "/public/images/image 87.png",
+      "img": "/public/images/image 104.png",
       "title": "PRx-4s-2x1.5-50m Удленитель силовой",
       "price": "770 000 cум"
     },
@@ -172,7 +172,7 @@
     },
     {
       "id": 32,
-      "img": "/public/images/image 104.png",
+      "img": "/public/images/image 87.png",
       "title": "Гипсокартон Кнауф потолочный влагостойкий (9.5мм) ",
       "price": "54 300 cум"
     },

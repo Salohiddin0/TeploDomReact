@@ -37,9 +37,9 @@ const CategoryCard = () => {
             {!isCategoryPage && (
               <Link
                 to='/categories'
-                className='cursor-pointer flex items-center  font-inter gap-2 text-[#0077B6]'
+                className='cursor-pointer flex items-center gap-2 font-inter text-[#0077B6]'
               >
-                Все категории
+                Все категории S
                 <svg
                   width='9'
                   height='15'
