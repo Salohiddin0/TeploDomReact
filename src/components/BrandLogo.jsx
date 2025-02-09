@@ -1,29 +1,22 @@
-'use client'
-
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Scrollbar } from 'swiper/modules'
 import 'swiper/css'
-import 'swiper/css/scrollbar'
+
+import Image1 from '../assets/image 63.png'
+import Image2 from '../assets/image 64.png'
+import Image3 from '../assets/image 65.png'
+import Image4 from '../assets/image 66.png'
+import Image5 from '../assets/image 67.png'
 
 const BrandLogo = () => {
-  const brandImages = [
-    '/public/images/image 63.png',
-    '/public/images/image 64.png',
-    '/public/images/image 65.png',
-    '/public/images/image 66.png',
-    '/public/images/image 67.png'
-  ]
+  const brandImages = [Image1, Image2, Image3, Image4, Image5]
 
   return (
     <div className='bg-[#FAFAFA] py-10 relative'>
-      <div className='max-w-7xl mx-auto px-4'>
+      <div className='max-w-7xl mx-auto px-4 overflow-hiddn'>
         <div className='flex justify-between items-center'>
           <b className='text-2xl font-inter'>Бренды</b>
         </div>
-
         <Swiper
-          modules={[Scrollbar]}
-          scrollbar={{ draggable: true }}
           loop={true}
           spaceBetween={20}
           breakpoints={{
@@ -37,8 +30,9 @@ const BrandLogo = () => {
         >
           {brandImages.map((img, index) => (
             <SwiperSlide key={index}>
-              <div className='bg-white w-[193px] h-[181px] flex justify-center items-center shadow-md'>
+              <div className='bg-white w-[193px] h-[181px] flex justify-center items-center shadow-md mt-[30px] rounded-[12px] p-[15px]'>
                 <img
+                  className='rounded-[12px]'
                   src={img}
                   alt={`Brand ${index + 1}`}
                   width={193}
