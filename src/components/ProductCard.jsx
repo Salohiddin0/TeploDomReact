@@ -1,6 +1,10 @@
-import { useEffect, useState } from 'react'
-import { ShoppingCart } from 'lucide-react'
+import { useEffect, useState, useRef } from 'react'
+import { ShoppingCart, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import { Navigation } from 'swiper/modules'
 
 export default function ProductCard () {
   const [products, setProducts] = useState([])
@@ -13,19 +17,23 @@ export default function ProductCard () {
       .catch(error => console.error('Error fetching products:', error))
   }, [])
 
-  const displayedProducts =
-    location.pathname === '/' ? products.slice(0, 8) : products
+  const isHomePage = location.pathname === '/'
+  const displayedProducts = isHomePage ? products.slice(0, 8) : products
+
+  const firstRow = displayedProducts.filter((_, index) => index % 2 === 0)
+  const secondRow = displayedProducts.filter((_, index) => index % 2 !== 0)
+
+  const firstSwiperRef = useRef(null)
+  const secondSwiperRef = useRef(null)
 
   return (
     <div className='w-full max-w-7xl mx-auto px-4 mt-[100px]'>
-      {location.pathname === '/' && (
-        <div className='flex flex-col sm:flex-row justify-between items-center mb-[30px]'>
-          <b className='text-lg sm:text-2xl font-inter mb-4 sm:mb-0'>
-            Новинки на сайте
-          </b>
+      {isHomePage && (
+        <div className='flex flex-row justify-between items-center mb-[30px] w-full'>
+          <b className='text-xl sm:text-3xl font-inter'>Новинки на сайте</b>
           <Link
             to='/all-categories'
-            className='text-sm sm:text-base cursor-pointer text-[#0077B6] font-inter flex justify-center items-center gap-2'
+            className='text-base sm:text-lg cursor-pointer text-[#0077B6] font-inter flex items-center gap-2'
           >
             Смотреть все
             <svg
@@ -37,13 +45,13 @@ export default function ProductCard () {
             >
               <path
                 d='M1.15582 1.15643C1.05593 1.25871 1 1.396 1 1.53896C1 1.68192 1.05593 1.81921 1.15582 1.92149L6.7368 7.64678L1.15582 13.3709C1.05593 13.4732 1 13.6105 1 13.7534C1 13.8964 1.05593 14.0337 1.15582 14.136C1.20438 14.1858 1.26243 14.2255 1.32656 14.2525C1.39068 14.2796 1.45958 14.2936 1.52918 14.2936C1.59879 14.2936 1.66769 14.2796 1.73181 14.2525C1.79594 14.2255 1.85399 14.1858 1.90255 14.136L7.83742 8.04648C7.94166 7.93954 8 7.79611 8 7.64678C8 7.49744 7.94166 7.35401 7.83742 7.24707L1.90255 1.15758C1.85399 1.10771 1.79594 1.06807 1.73181 1.04101C1.66769 1.01394 1.59879 1 1.52918 1C1.45958 1 1.39068 1.01394 1.32656 1.04101C1.26243 1.06807 1.20438 1.10771 1.15582 1.15758V1.15643Z'
-                fill='url(#paint0_linear_1_1603)'
-                stroke='url(#paint1_linear_1_1603)'
+                fill='url(#paint0_linear_1_46)'
+                stroke='url(#paint1_linear_1_46)'
                 stroke-width='0.2'
               />
               <defs>
                 <linearGradient
-                  id='paint0_linear_1_1603'
+                  id='paint0_linear_1_46'
                   x1='4.5'
                   y1='1'
                   x2='4.5'
@@ -54,7 +62,7 @@ export default function ProductCard () {
                   <stop offset='1' stop-color='#003661' />
                 </linearGradient>
                 <linearGradient
-                  id='paint1_linear_1_1603'
+                  id='paint1_linear_1_46'
                   x1='4.5'
                   y1='1'
                   x2='4.5'
@@ -70,32 +78,85 @@ export default function ProductCard () {
         </div>
       )}
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4'>
-        {displayedProducts.map((product, index) => (
-          <div
-            key={product.id}
-            className={`w-full sm:w-[255px] h-auto sm:h-[401px] rounded-lg border bg-white shadow-sm ${
-              index >= 4 ? 'lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1' : ''
-            }`}
+      {isHomePage ? (
+        <div className='flex flex-col gap-10'>
+          <SwiperBlock products={firstRow} swiperRef={firstSwiperRef} />
+
+          <SwiperBlock products={secondRow} swiperRef={secondSwiperRef} />
+        </div>
+      ) : (
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-5'>
+          {displayedProducts.map(product => (
+            <ProductItem key={product.id} product={product} />
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function SwiperBlock ({ products, swiperRef }) {
+  return (
+    <div>
+      <div className='flex justify-end items-center mb-3'>
+        <div className='flex gap-2'>
+          <button
+            onClick={() => swiperRef.current?.slidePrev()}
+            className='p-2 border rounded-full bg-gray-200 hover:bg-gray-300'
           >
-            <div className='flex items-center justify-center p-6 sm:p-10'>
-              <img
-                src={product.img}
-                alt={product.title}
-                className='max-h-36 object-contain'
-              />
-            </div>
-            <p className='mx-4 text-sm w-[195px] sm:text-base font-inter w-full'>
-              {product.title}
-            </p>
-            <b className='mx-4 text-sm sm:text-base'>{product.price}</b>
-            <div className='m-4 mt-4'>
-              <button className='flex items-center justify-center bg-[#FFB12A] text-white gap-2 border border-[#FFB12A] rounded-lg p-2 w-full sm:w-auto'>
-                <ShoppingCart size={20} />В корзину
-              </button>
-            </div>
-          </div>
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={() => swiperRef.current?.slideNext()}
+            className='p-2 border rounded-full bg-gray-200 hover:bg-gray-300'
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+      </div>
+
+      <Swiper
+        spaceBetween={5}
+        speed={500}
+        loop={true}
+        modules={[Navigation]}
+        onSwiper={swiper => (swiperRef.current = swiper)}
+        breakpoints={{
+          0: { slidesPerView: 1 },
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1280: { slidesPerView: 4 }
+        }}
+        className='mt-2'
+      >
+        {products.map(product => (
+          <SwiperSlide key={product.id}>
+            <ProductItem product={product} />
+          </SwiperSlide>
         ))}
+      </Swiper>
+    </div>
+  )
+}
+
+function ProductItem ({ product }) {
+  return (
+    <div className='w-full sm:w-[255px] h-auto sm:h-[401px] rounded-lg border bg-white shadow-sm'>
+      <div className='flex items-center justify-center p-6 sm:p-10'>
+        <img
+          src={product.img}
+          alt={product.title}
+          className='max-h-36 object-contain'
+        />
+      </div>
+      <p className='mx-4 text-sm sm:text-base font-inter w-full'>
+        {product.title}
+      </p>
+      <b className='mx-4 text-sm sm:text-base'>{product.price}</b>
+      <div className='m-4 mt-4'>
+        <button className='flex items-center justify-center bg-[#FFB12A] text-white gap-2 border border-[#FFB12A] rounded-lg p-2 w-full sm:w-auto'>
+          <ShoppingCart size={20} />В корзину
+        </button>
       </div>
     </div>
   )
