@@ -39,7 +39,7 @@ const CategoryCard = () => {
                 to='/categories'
                 className='cursor-pointer flex items-center gap-2 font-inter text-[#0077B6]'
               >
-                Все категории Ssssssssssssssssssssssssssssss
+                Все категории
                 <svg
                   width='9'
                   height='15'

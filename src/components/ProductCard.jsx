@@ -14,7 +14,7 @@ export default function ProductCard () {
   }, [])
 
   const displayedProducts =
-    location.pathname === '/' ? products.slice(0, 4) : products
+    location.pathname === '/' ? products.slice(0, 8) : products
 
   return (
     <div className='w-full max-w-7xl mx-auto px-4 mt-[100px]'>
