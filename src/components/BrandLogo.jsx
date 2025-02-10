@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { Navigation } from 'swiper/modules'
+import '../features/styles/TeamMember.css'
 
 import Image1 from '../assets/image 63.png'
 import Image2 from '../assets/image 64.png'
@@ -24,13 +25,13 @@ export default function BrandLogo () {
           <div className='flex gap-2'>
             <button
               onClick={() => swiperRef.current?.slidePrev()}
-              className='p-3 bg-[#EDEFF2] rounded-full shadow-md hover:bg-gray-300 transition'
+              className='p-3 bg-[#ffff] rounded-full shadow-md  transition'
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={() => swiperRef.current?.slideNext()}
-              className='p-3 bg-[#EDEFF2] rounded-full shadow-md hover:bg-gray-300 transition'
+              className='p-3 bg-[#ffff] rounded-full shadow-md  transition'
             >
               <ChevronRight size={24} />
             </button>

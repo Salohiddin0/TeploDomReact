@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { Navigation } from 'swiper/modules'
+import '../features/styles/TeamMember.css'
 
 export default function ProductCard () {
   const [products, setProducts] = useState([])
@@ -102,13 +103,13 @@ function SwiperBlock ({ products, swiperRef }) {
         <div className='flex gap-2'>
           <button
             onClick={() => swiperRef.current?.slidePrev()}
-            className='p-2 border rounded-full bg-gray-200 hover:bg-gray-300'
+            className='p-3 bg-[#ffff] rounded-full shadow-md transition'
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={() => swiperRef.current?.slideNext()}
-            className='p-2 border rounded-full bg-gray-200 hover:bg-gray-300'
+            className='p-3 bg-[#ffff] rounded-full shadow-md transition'
           >
             <ChevronRight size={20} />
           </button>

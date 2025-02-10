@@ -1,0 +1,105 @@
+.mySwiper {
+    padding-bottom: 30px;
+}
+
+.swiper-slide {
+    background: transparent !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shadow-lg {
+    box-shadow: none !important;
+}
+
+.team-section {
+    background: #FAFAFA;
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.navigation-buttons button {
+    background: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.navigation-buttons button:hover {
+    transform: scale(1.1);
+}
+
+.team-card {
+    background: white;
+    width: 255px;
+    height: 295px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.team-info {
+    text-align: center;
+}
+
+.team-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.team-position {
+    color: #878787;
+}
+
+@media (max-width: 768px) {
+    .navigation-buttons {
+        display: none;
+    }
+}

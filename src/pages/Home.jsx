@@ -4,6 +4,7 @@ import CategoryCard from '../components/CategoryCard'
 import ProductCard from './../components/ProductCard'
 import BrandLogo from '../components/BrandLogo'
 import Advantages from '../components/Advantages'
+import TeamMember from '../components/TeamMember'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <ProductCard />
       <BrandLogo />
       <Advantages />
+      <TeamMember />
     </div>
   )
 }
