@@ -3,7 +3,7 @@ import Rectangle1 from '../assets/Rectangle 23785.png'
 
 export default function AboutSection () {
   return (
-    <section className='info-section py-0 sm:py-20 px-[20px] sm:px-[50px]'>
+    <section className='info-section py-0 sm:py-20 px-[20px] sm:px-[50px] mb-[60px] sm:mb-[120px]'>
       <div className='container mx-auto lg:px-[150px]'>
         <h1 className='font-semibold text-[20px] sm:text-[30px] my-5'>
           Интернет магазин Теплодом

@@ -6,6 +6,7 @@ import BrandLogo from '../components/BrandLogo'
 import Advantages from '../components/Advantages'
 import TeamMember from '../components/TeamMember'
 import AboutSection from '../components/AboutSection'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Advantages />
       <TeamMember />
       <AboutSection />
+      <Footer />
     </div>
   )
 }
