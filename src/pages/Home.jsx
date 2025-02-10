@@ -5,6 +5,7 @@ import ProductCard from './../components/ProductCard'
 import BrandLogo from '../components/BrandLogo'
 import Advantages from '../components/Advantages'
 import TeamMember from '../components/TeamMember'
+import AboutSection from '../components/AboutSection'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <BrandLogo />
       <Advantages />
       <TeamMember />
+      <AboutSection />
     </div>
   )
 }
