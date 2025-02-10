@@ -26,16 +26,40 @@ const HomeCarousel = () => {
   const dotsSmallContainerRef = useRef(null)
 
   const slides = [
-    { id: '1', title: 'Пеноплекс Основа', desc: '...', bg: B1, fg: F1 },
-    { id: '2', title: 'Гипсакартон', desc: '...', bg: B2, fg: F2 },
-    { id: '3', title: 'Basalt wool тепло и тихо', desc: '...', bg: B3, fg: F3 },
-    { id: '4', title: 'Финская Фанера', desc: '...', bg: B4, fg: F4 }
+    {
+      id: '1',
+      title: 'Пеноплекс Основа',
+      desc: 'Пеноплэкс» — российская компания, производитель тепло- и гидроизоляционных, а также декоративно-отделочных материалов на основе полимеров, основной вид продукции — теплоизоляционные плиты из экструзионного пенополистирола',
+      bg: B1,
+      fg: F1
+    },
+    {
+      id: '2',
+      title: 'Гипсакартон',
+      desc: 'Cтроительный материал, представляющий собой лист, состоящий из двух слоёв строительной бумаги (картона) и сердечника из слоя затвердевшего гипсового теста с наполнителями.',
+      bg: B2,
+      fg: F2
+    },
+    {
+      id: '3',
+      title: 'Basalt wool тепло и тихо',
+      desc: 'Базальтовое волокно представляет собой материал, изготовленный из чрезвычайно тонких волокон базальта, который состоит из минералов плагиоклаза, пироксена и оливина. Он похож на стекловолокно.',
+      bg: B3,
+      fg: F3
+    },
+    {
+      id: '4',
+      title: 'Финская Фанера',
+      desc: 'многослойный строительный материал, изготавливаемый путём склеивания специально подготовленного шпона. Для повышения прочности фанеры слои шпона накладываются так.',
+      bg: B4,
+      fg: F4
+    }
   ]
 
-  const mobileSlides = [
-    { id: '5', title: 'Штукатурка гипсовая', desc: '...', bg: B5, fg: F5 },
-    ...slides
-  ]
+  // const mobileSlides = [
+  //   { id: '5', title: 'Штукатурка гипсовая', desc: '...', bg: B5, fg: F5 },
+  //   ...slides
+  // ]
 
   const updateDots = activeIndex => {
     if (dotsContainerRef.current) {
@@ -68,14 +92,14 @@ const HomeCarousel = () => {
   }
 
   return (
-    <section className='home-carousel-section'>
-      <div className='container mx-auto px-[10px] lg:px-[150px]'>
+    <section className='home-carousel-section p-4'>
+      <div className='container mx-auto px-[10px] lg:px-[150px] bg-slate-500 rounded-[20px]'>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           spaceBetween={50}
           slidesPerView={1}
           loop={true}
-          speed={500}
+          speed={1000}
           autoplay={{ delay: 1000, disableOnInteraction: false }}
           onSlideChange={swiper => updateDots(swiper.realIndex)}
           onSwiper={swiper => {
