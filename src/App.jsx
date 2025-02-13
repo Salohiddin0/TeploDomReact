@@ -2,17 +2,20 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import CategoryCard from './components/CategoryCard'
-import Nav from './components/Nav'
 import ProductCard from './components/ProductCard'
+import ProductDetailPage from './components/ProductDetailPage'
+import AppRouter from './features/routes/AppRouter'
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Nav />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/categories' element={<CategoryCard />} />
-        <Route path='/all-categories' element={<ProductCard />} />
+        <Route path='/' element={<AppRouter />}>
+          <Route index element={<Home />} />
+          <Route path='/categories' element={<CategoryCard />} />
+          <Route path='/navinki' element={<ProductCard />} />
+          <Route path='/product-detail/:id' element={<ProductDetailPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )

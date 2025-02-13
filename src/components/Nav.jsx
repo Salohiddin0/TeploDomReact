@@ -140,7 +140,7 @@ export default function Nav () {
           </button>
         </div>
 
-        <div className='md:hidden mb-4'>
+        <div className='md:hidden'>
           <div className='relative'>
             <input
               type='search'
