@@ -6,6 +6,7 @@ import BrandLogo from '../components/BrandLogo'
 import Advantages from '../components/Advantages'
 import TeamMember from '../components/TeamMember'
 import AboutSection from '../components/AboutSection'
+import { Contact } from 'lucide-react'
 
 const Home = () => {
   return (

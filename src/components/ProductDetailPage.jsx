@@ -9,8 +9,10 @@ const ProductDetailPage = () => {
   useEffect(() => {
     fetch('http://localhost:8080/ProductCard/' + id)
       .then(response => response.json())
-      .then(data => setProduct(data))
-      .catch(error => console.error('Error fetching products:', error))
+      .then(data => {
+        setProduct(data)
+        element.scrollTo(0, 1000)
+      })
   }, [id])
 
   const incrementQuantity = () => setQuantity(prev => prev + 1)
@@ -19,7 +21,7 @@ const ProductDetailPage = () => {
   return (
     <div className='w-full bg-[#FAFAFA] min-h-screen py-4 sm:py-8'>
       <div className='max-w-7xl mx-auto px-4 bg-white rounded-[20px]'>
-        <div className='flex flex-col lg:flex-row lg:gap-[55px]'>
+        <div className='flex flex-col lg:flex-row lg:gap-[55px] w-[1110px] h-[512px]'>
           <div className='lg:w-[424px]'>
             <div className='bg-white p-4 sm:p-8 rounded-lg'>
               <div className='border p-3 sm:p-5 rounded-lg'>

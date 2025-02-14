@@ -5,6 +5,7 @@ import CategoryCard from './components/CategoryCard'
 import ProductCard from './components/ProductCard'
 import ProductDetailPage from './components/ProductDetailPage'
 import AppRouter from './features/routes/AppRouter'
+import Contact from './pages/Contact'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path='/categories' element={<CategoryCard />} />
           <Route path='/navinki' element={<ProductCard />} />
           <Route path='/product-detail/:id' element={<ProductDetailPage />} />
+          <Route path='/contacts' element={<Contact />} />
         </Route>
       </Routes>
     </BrowserRouter>
