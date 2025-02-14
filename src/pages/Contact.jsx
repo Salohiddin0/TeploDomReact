@@ -29,7 +29,8 @@ export default function Contact () {
           from_email: formData.email,
           phone: formData.phone,
           message: formData.message,
-          to_name: 'Salohiddin'
+          to_name: 'Salohiddin',
+          to_email: 'sulaymonovsaloxiddin092@gmail.com'
         },
         '86pGSzPu0D9_GNil_'
       )
