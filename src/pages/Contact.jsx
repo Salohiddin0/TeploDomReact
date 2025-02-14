@@ -9,6 +9,8 @@ export default function Contact () {
     message: ''
   })
 
+  const forbiddenEmails = ['sulaymonovsaloxiddin092@gmail.com'] // Sizning email
+
   const handleChange = e => {
     const { name, value } = e.target
     setFormData(prevState => ({
@@ -19,6 +21,12 @@ export default function Contact () {
 
   const handleSubmit = async e => {
     e.preventDefault()
+
+    // ❌ Foydalanuvchi sizning email'ingizni kiritolmaydi!
+    if (forbiddenEmails.includes(formData.email.toLowerCase())) {
+      alert("❌ Siz bu email'ni ishlata olmaysiz!")
+      return
+    }
 
     try {
       const result = await emailjs.send(
