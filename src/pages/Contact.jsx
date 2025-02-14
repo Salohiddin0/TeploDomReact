@@ -9,7 +9,7 @@ export default function Contact () {
     message: ''
   })
 
-  const forbiddenEmails = ['sulaymonovsaloxiddin092@gmail.com'] // Sizning email
+  const forbiddenEmails = ['sulaymonovsaloxiddin092@gmail.com']
 
   const handleChange = e => {
     const { name, value } = e.target
@@ -22,9 +22,8 @@ export default function Contact () {
   const handleSubmit = async e => {
     e.preventDefault()
 
-    // ❌ Foydalanuvchi sizning email'ingizni kiritolmaydi!
     if (forbiddenEmails.includes(formData.email.toLowerCase())) {
-      alert("❌ Siz bu email'ni ishlata olmaysiz!")
+      alert('❌ Вы не можете использовать этот email!')
       return
     }
 
@@ -44,7 +43,7 @@ export default function Contact () {
       )
 
       if (result.text === 'OK') {
-        alert('✅ Xabar muvaffaqiyatli yuborildi!')
+        alert('✅ Сообщение успешно отправлено!')
         setFormData({
           name: '',
           email: '',
@@ -53,8 +52,8 @@ export default function Contact () {
         })
       }
     } catch (error) {
-      console.error('❌ Xatolik yuz berdi:', error)
-      alert(`❌ Xabar yuborishda xatolik. Iltimos, qayta urinib ko'ring!`)
+      console.error('❌ Произошла ошибка:', error)
+      alert(`❌ Ошибка при отправке сообщения. Пожалуйста, попробуйте снова!`)
     }
   }
 
