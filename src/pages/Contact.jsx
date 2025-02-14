@@ -52,7 +52,9 @@ export default function Contact () {
   return (
     <section className='bg-[#FAFAFA]'>
       <div className='max-w-7xl mx-auto px-4 py-8 bg-[#FAFAFA]'>
-        <h1 className='text-2xl font-bold mb-[40px] mt-[60px]'>Контакты</h1>
+        <h1 className='text-2xl font-bold mb-[40px] mt-8 md:mt-[60px]'>
+          Контакты
+        </h1>
 
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-12'>
           <div className='flex flex-col items-center text-center'>
@@ -272,9 +274,9 @@ export default function Contact () {
           </div>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-[120px] mb-[120px]'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 md:mt-[120px] mb-16 md:mb-[120px]'>
           <div className='p-6 rounded-lg self-center'>
-            <h2 className='text-[2rem] font-semibold mb-4'>
+            <h2 className='text-xl sm:text-2xl font-semibold mb-4'>
               Заказать обратный звонок
             </h2>
             <form onSubmit={handleSubmit} className='space-y-4'>
