@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
+import { toast } from 'react-toastify'
 
 export default function Contact () {
   const [formData, setFormData] = useState({
@@ -18,12 +19,13 @@ export default function Contact () {
       [name]: value
     }))
   }
+  const notify = message => toast(message)
 
   const handleSubmit = async e => {
     e.preventDefault()
 
     if (forbiddenEmails.includes(formData.email.toLowerCase())) {
-      alert('❌ Вы не можете использовать этот email!')
+      notify('❌ Вы не можете использовать этот email!')
       return
     }
 
@@ -43,7 +45,7 @@ export default function Contact () {
       )
 
       if (result.text === 'OK') {
-        alert('✅ Сообщение успешно отправлено!')
+        notify('✅ Сообщение успешно отправлено!')
         setFormData({
           name: '',
           email: '',
@@ -53,7 +55,7 @@ export default function Contact () {
       }
     } catch (error) {
       console.error('❌ Произошла ошибка:', error)
-      alert(`❌ Ошибка при отправке сообщения. Пожалуйста, попробуйте снова!`)
+      notify(`❌ Ошибка при отправке сообщения. Пожалуйста, попробуйте снова!`)
     }
   }
 
@@ -64,9 +66,9 @@ export default function Contact () {
           Контакты
         </h1>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-12'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-10 mb-12'>
           <div className='flex flex-col items-center text-center'>
-            <div className='w-16 h-16 rounded-full  border-orange-400 flex items-center justify-center mb-2'>
+            <div className='w-16 h-16 rounded-full  border-orange-400 flex items-center justify-center mb-[20px]'>
               <svg
                 width='120'
                 height='120'
@@ -103,12 +105,12 @@ export default function Contact () {
                 </defs>
               </svg>
             </div>
-            <h3 className='font-medium'>Телефон</h3>
-            <p className='text-sm'>+998 (97) 761 62 51</p>
+            <h3 className='font-bold mb-[20px]'>Телефон</h3>
+            <p className='text-md'>+998 (97) 761 62 51</p>
           </div>
 
           <div className='flex flex-col items-center text-center'>
-            <div className='w-16 h-16 rounded-full  border-orange-400 flex items-center justify-center mb-2'>
+            <div className='w-16 h-16 rounded-full  border-orange-400 flex items-center justify-center mb-[20px]'>
               <svg
                 width='120'
                 height='120'
@@ -133,12 +135,12 @@ export default function Contact () {
                 />
               </svg>
             </div>
-            <h3 className='font-medium'>Локация</h3>
-            <p className='text-sm'>Ташкент, ул. Беруни, 3А</p>
+            <h3 className='font-bold mb-[20px]'>Локация</h3>
+            <p className='text-md'>Ташкент, ул. Беруни, 3А</p>
           </div>
 
           <div className='flex flex-col items-center text-center'>
-            <div className='w-16 h-16 rounded-full  border-orange-400 flex items-center justify-center mb-2'>
+            <div className='w-16 h-16 rounded-full  border-orange-400 flex items-center justify-center mb-[20px]'>
               <svg
                 width='120'
                 height='120'
@@ -169,12 +171,12 @@ export default function Contact () {
                 />
               </svg>
             </div>
-            <h3 className='font-medium'>Е-майл</h3>
-            <p className='text-sm'>Sardorraimov@gmail.com</p>
+            <h3 className='font-bold mb-[20px]'>Е-майл</h3>
+            <p className='text-md'>Sardorraimov@gmail.com</p>
           </div>
 
           <div className='flex flex-col items-center text-center'>
-            <div className='w-16 h-16 rounded-full  border-orange-400 flex items-center justify-center mb-2'>
+            <div className='w-16 h-16 rounded-full  border-orange-400 flex items-center justify-center mb-[20px]'>
               <svg
                 width='120'
                 height='120'
@@ -211,12 +213,12 @@ export default function Contact () {
                 </defs>
               </svg>
             </div>
-            <h3 className='font-medium'>Телефон</h3>
-            <p className='text-sm'>+998 (93) 556 91 31</p>
+            <h3 className='font-bold mb-[20px]'>Телефон</h3>
+            <p className='text-md'>+998 (93) 556 91 31</p>
           </div>
 
           <div className='flex flex-col items-center text-center'>
-            <div className='w-16 h-16 rounded-full  border-orange-400 flex items-center justify-center mb-2'>
+            <div className='w-16 h-16 rounded-full  border-orange-400 flex items-center justify-center mb-[20px]'>
               <svg
                 width='120'
                 height='120'
@@ -247,12 +249,14 @@ export default function Contact () {
                 />
               </svg>
             </div>
-            <h3 className='font-medium'>Расписание</h3>
-            <p className='text-sm'>Мы в вашем распоряжении 7 дней в неделю!!</p>
+            <h3 className='font-bold mb-[20px]'>Расписание</h3>
+            <p className='text-md'>
+              Мы в вашем распоряжении <br /> 7 дней в неделю!!
+            </p>
           </div>
 
           <div className='flex flex-col items-center text-center'>
-            <div className='w-16 h-16 rounded-full  border-orange-400 flex items-center justify-center mb-2'>
+            <div className='w-16 h-16 rounded-full  border-orange-400 flex items-center justify-center mb-[20px]'>
               <svg
                 width='120'
                 height='120'
@@ -277,8 +281,8 @@ export default function Contact () {
                 />
               </svg>
             </div>
-            <h3 className='font-medium'>Время</h3>
-            <p className='text-sm'>Каждый день с 8:00 – 18:00</p>
+            <h3 className='font-bold mb-[20px]'>Время</h3>
+            <p className='text-md'>Каждый день с 8:00 – 18:00</p>
           </div>
         </div>
 

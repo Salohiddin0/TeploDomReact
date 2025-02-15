@@ -94,8 +94,8 @@ export default function Nav () {
             <button className='p-3 lg:p-[14px] bg-white rounded-full flex items-center justify-center'>
               <Link to='/Shop' className='h-5 w-5 lg:h-[28px] lg:w-[28px]'>
                 <svg
-                  width='28'
-                  height='28'
+                  width='100%'
+                  height='100%'
                   viewBox='0 0 28 28'
                   fill='none'
                   xmlns='http://www.w3.org/2000/svg'
