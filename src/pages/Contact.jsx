@@ -302,13 +302,14 @@ export default function Contact () {
                   required
                 />
               </div>
-
-              <button
-                type='submit'
-                className='w-full bg-orange-400 text-white py-2 px-4 rounded-md hover:bg-orange-500 transition-colors'
-              >
-                Отправить
-              </button>
+              <div className='flex justify-end sm:justify-start'>
+                <button
+                  type='submit'
+                  className='bg-orange-400 text-white py-2 px-4 rounded-md hover:bg-orange-500 transition-colors'
+                >
+                  Отправить
+                </button>
+              </div>
             </form>
           </div>
 
